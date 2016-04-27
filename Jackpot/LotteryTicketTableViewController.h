@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WinningTicketViewController.h"
 
-@interface LotteryTicketTableViewController : UITableViewController
+@interface LotteryTicketTableViewController : UITableViewController <WinningTicketViewControllerDelegate>
 
 @end

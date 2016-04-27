@@ -14,6 +14,7 @@
 		AA7FBA701CC6B4F400213FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7FBA6E1CC6B4F400213FF3 /* LaunchScreen.storyboard */; };
 		AA7FBA7C1CC7E20000213FF3 /* LotterryTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7FBA7B1CC7E20000213FF3 /* LotterryTickets.m */; };
 		AA7FBA7F1CC7EBC800213FF3 /* LotteryTicketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7FBA7E1CC7EBC800213FF3 /* LotteryTicketTableViewController.m */; };
+		AA7FBC211CD13C7C00213FF3 /* WinningTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7FBC201CD13C7C00213FF3 /* WinningTicketViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		AA7FBA7B1CC7E20000213FF3 /* LotterryTickets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotterryTickets.m; sourceTree = "<group>"; };
 		AA7FBA7D1CC7EBC800213FF3 /* LotteryTicketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryTicketTableViewController.h; sourceTree = "<group>"; };
 		AA7FBA7E1CC7EBC800213FF3 /* LotteryTicketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryTicketTableViewController.m; sourceTree = "<group>"; };
+		AA7FBC1F1CD13C7C00213FF3 /* WinningTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinningTicketViewController.h; sourceTree = "<group>"; };
+		AA7FBC201CD13C7C00213FF3 /* WinningTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinningTicketViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +66,8 @@
 			children = (
 				AA7FBA631CC6B4F400213FF3 /* AppDelegate.h */,
 				AA7FBA641CC6B4F400213FF3 /* AppDelegate.m */,
-				AA7FBA7A1CC7E20000213FF3 /* LotterryTickets.h */,
-				AA7FBA7B1CC7E20000213FF3 /* LotterryTickets.m */,
-				AA7FBA7D1CC7EBC800213FF3 /* LotteryTicketTableViewController.h */,
-				AA7FBA7E1CC7EBC800213FF3 /* LotteryTicketTableViewController.m */,
+				AA7FBC231CD13C9700213FF3 /* Model */,
+				AA7FBC221CD13C8000213FF3 /* View Controllers */,
 				AA7FBA691CC6B4F400213FF3 /* Main.storyboard */,
 				AA7FBA6C1CC6B4F400213FF3 /* Assets.xcassets */,
 				AA7FBA6E1CC6B4F400213FF3 /* LaunchScreen.storyboard */,
@@ -82,6 +83,26 @@
 				AA7FBA611CC6B4F400213FF3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA7FBC221CD13C8000213FF3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA7FBA7D1CC7EBC800213FF3 /* LotteryTicketTableViewController.h */,
+				AA7FBA7E1CC7EBC800213FF3 /* LotteryTicketTableViewController.m */,
+				AA7FBC1F1CD13C7C00213FF3 /* WinningTicketViewController.h */,
+				AA7FBC201CD13C7C00213FF3 /* WinningTicketViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AA7FBC231CD13C9700213FF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA7FBA7A1CC7E20000213FF3 /* LotterryTickets.h */,
+				AA7FBA7B1CC7E20000213FF3 /* LotterryTickets.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7FBC211CD13C7C00213FF3 /* WinningTicketViewController.m in Sources */,
 				AA7FBA7C1CC7E20000213FF3 /* LotterryTickets.m in Sources */,
 				AA7FBA7F1CC7EBC800213FF3 /* LotteryTicketTableViewController.m in Sources */,
 				AA7FBA651CC6B4F400213FF3 /* AppDelegate.m in Sources */,

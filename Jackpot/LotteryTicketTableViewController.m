@@ -26,8 +26,15 @@
     UIBarButtonItem *newQuickPickButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTicket:)];
     self.navigationItem.rightBarButtonItem = newQuickPickButton;
     
+//    UIBarButtonItem *winningTicketSetupButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(setupWinningTicket:)];
+//    self.navigationItem.leftBarButtonItem = winningTicketSetupButton;
+    
     self.ticketList = [[NSMutableArray alloc] initWithCapacity:0];
+    
+
 }
+
+
 
 -(void)addTicket:(id)sender
 {
@@ -37,6 +44,15 @@
     
     
 }
+
+#pragma mark - WinningTicket Delegate
+
+-(void)winningTicketEdited:(NSArray *)winningTicket {
+    
+    NSLog(@"Winning Ticket array is %@", winningTicket);
+    
+}
+
 
 
 
@@ -70,6 +86,18 @@
     cell.textLabel.text = [temporaryNumbers componentsJoinedByString:@" "];
         
     return cell;
+}
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    if ([segue.identifier isEqualToString:@"winTicketSegue"]) {
+        WinningTicketViewController *vc = (WinningTicketViewController *)[segue destinationViewController];
+        vc.delegate = self;
+    }
 }
 
 
@@ -109,14 +137,7 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end
