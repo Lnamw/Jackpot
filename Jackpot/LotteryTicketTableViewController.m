@@ -51,6 +51,9 @@
     
     NSLog(@"Winning Ticket array is %@", winningTicket);
     
+    [self.navigationController popViewControllerAnimated:YES];
+
+    
 }
 
 

@@ -179,21 +179,17 @@
                             <constraint firstItem="jUk-8h-sth" firstAttribute="top" secondItem="8fA-GK-z3U" secondAttribute="bottom" constant="20" id="pjE-7p-e3k"/>
                             <constraint firstItem="Dpr-W1-V5j" firstAttribute="centerX" secondItem="7gQ-Do-jrX" secondAttribute="centerX" id="z6b-F4-wuT"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="EV6-JG-sgJ" appends="YES" id="mFU-gR-NhQ"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="winningNumber1" destination="3L3-6K-yUQ" id="RP4-CV-yzy"/>
-                        <outlet property="winningNumber2" destination="0ge-av-CcX" id="hwg-3i-pxX"/>
-                        <outlet property="winningNumber3" destination="8fA-GK-z3U" id="TIj-Hh-MfT"/>
-                        <outlet property="winningNumber4" destination="jUk-8h-sth" id="6aK-Ns-ua8"/>
-                        <outlet property="winningNumber5" destination="8Uc-ZY-g8o" id="GdE-Za-6oE"/>
-                        <outlet property="winningNumber6" destination="Dpr-W1-V5j" id="wnT-85-e1Y"/>
+                        <outletCollection property="textFieldCollection" destination="3L3-6K-yUQ" id="pL0-6Z-Ti3"/>
+                        <outletCollection property="textFieldCollection" destination="0ge-av-CcX" id="eB6-X9-c1K"/>
+                        <outletCollection property="textFieldCollection" destination="8fA-GK-z3U" id="ggz-iB-eNY"/>
+                        <outletCollection property="textFieldCollection" destination="jUk-8h-sth" id="hz9-4S-c2j"/>
+                        <outletCollection property="textFieldCollection" destination="8Uc-ZY-g8o" id="OGc-M0-EKZ"/>
+                        <outletCollection property="textFieldCollection" destination="Dpr-W1-V5j" id="9vx-nh-iN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pB-Zd-EBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="EV6-JG-sgJ"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="-236"/>
         </scene>
