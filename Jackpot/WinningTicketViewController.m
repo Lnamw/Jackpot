@@ -27,10 +27,40 @@
     
 }
 
-
 -(void)grTapped:(id)sender {
     [self.view endEditing:YES];
 }
+
+//- (void) viewDidAppear:(BOOL)animated {
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title" message:@"Press a button" preferredStyle:UIAlertControllerStyleActionSheet]; //PREFERRED STYLE can be UIAlertControllerStyleAlert
+//    
+//    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        NSLog(@"OK");
+//    }];
+//    
+//    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        NSLog(@"Cancel");
+//    }];
+//    
+//    
+//    [alert addAction:ok];
+//    [alert addAction:cancel];
+//    
+//    [self presentViewController:alert animated:YES completion:nil];
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Choose a number between 1 and 53" preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    UI
+//}
+
+
+
+
+
+
+
 
 -(BOOL)isNumberValid:(int)number {
     if (number < 1 || number > 53) {

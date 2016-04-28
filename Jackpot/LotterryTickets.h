@@ -11,6 +11,9 @@
 @interface LotterryTickets : NSObject
 
 @property (strong, nonatomic) NSArray *lotteryNumbers;
+@property (nonatomic, assign, getter=isWinner)BOOL winner;
+@property (nonatomic, strong) NSNumber *prizeAmount;
+
 
 -(instancetype)initWithRandomNumber;
 

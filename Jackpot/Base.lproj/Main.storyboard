@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -25,18 +26,64 @@
         <scene sceneID="wNX-xl-OFM">
             <objects>
                 <tableViewController id="gi5-me-nSD" customClass="LotteryTicketTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SZX-vb-iiA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" id="SZX-vb-iiA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lotteryTicketCell" id="b8P-8k-pWR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lotteryTicketCell" rowHeight="94" id="b8P-8k-pWR" customClass="LotteryTicketCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b8P-8k-pWR" id="1KK-eX-Awm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="93.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNJ-kj-AUM">
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="584" id="wSO-ey-Der"/>
+                                                <constraint firstAttribute="height" constant="21" id="x8B-wW-sEw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="21" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMz-el-a8u">
+                                            <rect key="frame" x="8" y="64" width="355" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="8lG-C8-F6u"/>
+                                                <constraint firstAttribute="width" constant="355" id="fUk-hI-5LS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.99194208120000005" green="0.018485006920000002" blue="0.14331170900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="221" placeholderIntrinsicHeight="21" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp7-Ah-Bfo">
+                                            <rect key="frame" x="371" y="64" width="221" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="221" id="zJd-ek-jm9"/>
+                                                <constraint firstAttribute="height" constant="21" id="ztc-fd-2FK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Pp7-Ah-Bfo" firstAttribute="trailing" secondItem="1KK-eX-Awm" secondAttribute="trailingMargin" id="0aC-vP-g8R"/>
+                                        <constraint firstItem="jNJ-kj-AUM" firstAttribute="top" secondItem="1KK-eX-Awm" secondAttribute="topMargin" id="8Ie-cX-Yid"/>
+                                        <constraint firstItem="jNJ-kj-AUM" firstAttribute="trailing" secondItem="1KK-eX-Awm" secondAttribute="trailingMargin" id="DvN-Za-cEr"/>
+                                        <constraint firstItem="jNJ-kj-AUM" firstAttribute="leading" secondItem="1KK-eX-Awm" secondAttribute="leadingMargin" id="Dvd-r4-Ci9"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Pp7-Ah-Bfo" secondAttribute="bottom" constant="0.5" id="Lnl-mI-PUl"/>
+                                        <constraint firstItem="IMz-el-a8u" firstAttribute="leading" secondItem="1KK-eX-Awm" secondAttribute="leadingMargin" id="urp-HI-0wr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="IMz-el-a8u" secondAttribute="bottom" constant="0.5" id="ysX-8g-DEX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="WinLabel" destination="IMz-el-a8u" id="mvx-lb-gxC"/>
+                                    <outlet property="prizeLabel" destination="Pp7-Ah-Bfo" id="GRi-ig-kel"/>
+                                    <outlet property="ticketNumberLabel" destination="jNJ-kj-AUM" id="1aU-vh-5PJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -8,6 +8,7 @@
 
 #import "LotteryTicketTableViewController.h"
 #import "LotterryTickets.h"
+#import "LotteryTicketCell.h"
 
 @interface LotteryTicketTableViewController ()
 
@@ -52,8 +53,48 @@
     NSLog(@"Winning Ticket array is %@", winningTicket);
     
     [self.navigationController popViewControllerAnimated:YES];
-
+   
+    for (LotterryTickets *ticket in self.ticketList) {
+        int matchingNumber = 0;
+        for (NSNumber *number in ticket.lotteryNumbers) {
+            for (NSNumber *winningNumber in winningTicket) {
+                if ([number isEqualToNumber:winningNumber]) {
+                    matchingNumber ++;
+                }
+            }
+        }
+        if (matchingNumber > 3) {
+            ticket.winner = YES;
+        }
+        
+        switch (matchingNumber) {
+            case 0:
+            case 1:
+            case 2:
+                ticket.prizeAmount = @0;
+                break;
+            case 3:
+                ticket.prizeAmount = @1;
+                break;
+            case 4:
+                ticket.prizeAmount = @5;
+                break;
+            case 5:
+                ticket.prizeAmount = @20;
+                break;
+            case 6:
+                ticket.prizeAmount = @100;
+                break;
+            default:
+                break;
+        }
+        
+        
+        NSLog(@"I have %d matching numbers and you win £%@", matchingNumber, ticket.prizeAmount);
+    }
     
+    [self.tableView reloadData];
+
 }
 
 
@@ -71,7 +112,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lotteryTicketCell" forIndexPath:indexPath];
+    LotteryTicketCell *cell = (LotteryTicketCell *)[tableView dequeueReusableCellWithIdentifier:@"lotteryTicketCell" forIndexPath:indexPath];
     
     LotterryTickets *newLotteryTicket = self.ticketList[indexPath.row];
     
@@ -86,8 +127,17 @@
         [temporaryNumbers addObject:numberString];
     }
     
-    cell.textLabel.text = [temporaryNumbers componentsJoinedByString:@" "];
-        
+    cell.ticketNumberLabel.text = [temporaryNumbers componentsJoinedByString:@" "];
+    
+        if (newLotteryTicket.isWinner) {
+            cell.WinLabel.text = @"You have a winning ticket";
+            cell.prizeLabel.text = ([NSString stringWithFormat:@"You won £%@", newLotteryTicket.prizeAmount]);
+        }
+     else {
+        cell.WinLabel.text = @" ";
+        cell.prizeLabel.text = @" ";
+    }
+
     return cell;
 }
 
