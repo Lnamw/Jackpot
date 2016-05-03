@@ -30,8 +30,13 @@
 //    UIBarButtonItem *winningTicketSetupButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(setupWinningTicket:)];
 //    self.navigationItem.leftBarButtonItem = winningTicketSetupButton;
     
-    self.ticketList = [[NSMutableArray alloc] initWithCapacity:0];
+    [self loadNumbers];
+
+    if (self.ticketList == nil) {
+        self.ticketList = [[NSMutableArray alloc] initWithCapacity:0];
+    }
     
+    [self.tableView reloadData];
 
 }
 
@@ -41,6 +46,8 @@
 {
     LotterryTickets *newTicket = [[LotterryTickets alloc] initWithRandomNumber];
     [self.ticketList addObject:newTicket];
+    
+    [self saveNumbers];
     [self.tableView reloadData];
     
     
@@ -63,16 +70,16 @@
                 }
             }
         }
-        if (matchingNumber > 3) {
+        if (matchingNumber > 2) {
             ticket.winner = YES;
         }
         
         switch (matchingNumber) {
-            case 0:
-            case 1:
-            case 2:
-                ticket.prizeAmount = @0;
-                break;
+//            case 0:
+//            case 1:
+//            case 2:
+//                ticket.prizeAmount = @0;
+//                break;
             case 3:
                 ticket.prizeAmount = @1;
                 break;
@@ -86,6 +93,7 @@
                 ticket.prizeAmount = @100;
                 break;
             default:
+                ticket.prizeAmount = @0;
                 break;
         }
         
@@ -142,6 +150,10 @@
 }
 
 
+
+
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -154,6 +166,32 @@
 }
 
 
+
+#pragma mark - loadind and saving
+
+-(NSURL *)applicationDocumentDirectory {
+    
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+- (void)saveNumbers {
+    
+    NSString *path = [[self applicationDocumentDirectory].path stringByAppendingPathComponent:@"lotteryTickets"];
+
+    NSData *numbersData = [NSKeyedArchiver archivedDataWithRootObject:self.ticketList];
+    [numbersData writeToFile:path atomically:YES];
+}
+
+
+-(void)loadNumbers {
+
+    NSString *path = [[self applicationDocumentDirectory].path stringByAppendingPathComponent:@"lotteryTickets"];
+    
+    NSData *ticketData = [NSData dataWithContentsOfFile:path];
+    self.ticketList = [NSKeyedUnarchiver unarchiveObjectWithData:ticketData];
+    [self.tableView reloadData];
+}
 
 
 /*

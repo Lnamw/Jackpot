@@ -8,7 +8,7 @@
 
 #import "LotterryTickets.h"
 
-@implementation LotterryTickets
+@implementation LotterryTickets 
 
 -(instancetype)initWithRandomNumber
 {
@@ -25,6 +25,27 @@
     }
     return self;
 }
+
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    if (self = [super init]) {
+        _lotteryNumbers = [aDecoder decodeObjectForKey:@"lotteryNumber"];
+        _winner = [aDecoder decodeBoolForKey:@"winner"];
+        _prizeAmount = [aDecoder decodeObjectForKey:@"prizeAmount"];
+    }
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:_lotteryNumbers forKey:@"lotteryNumber"];
+    [aCoder encodeBool:_winner forKey:@"winner"];
+    [aCoder encodeObject:_prizeAmount forKey:@"prizeAmount"];
+}
+
+
+
 
 @end
 

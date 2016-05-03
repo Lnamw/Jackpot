@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LotterryTickets : NSObject
+@interface LotterryTickets : NSObject <NSCoding> 
 
 @property (strong, nonatomic) NSArray *lotteryNumbers;
 @property (nonatomic, assign, getter=isWinner)BOOL winner;

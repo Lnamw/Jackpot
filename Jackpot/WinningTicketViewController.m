@@ -44,8 +44,6 @@
 
 
 - (IBAction)OKButtonPressed:(id)sender {
-    
-
    
     BOOL isValidTicket = YES;
     
